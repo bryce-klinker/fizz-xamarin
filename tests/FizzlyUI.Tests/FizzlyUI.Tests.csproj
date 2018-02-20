@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67AF0398-839F-49A0-8B01-CCAC9E1591D9}</ProjectGuid>
+    <ProjectGuid>{C20CF7DB-13BB-458B-8E3A-6C0B4BC56D10}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>FizzlyUI.Tests</RootNamespace>
     <AssemblyName>FizzlyUI.Tests</AssemblyName>
@@ -27,15 +27,29 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="nunit.framework">
-      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.UITest">
-      <HintPath>..\..\packages\Xamarin.UITest.2.0.8\lib\Xamarin.UITest.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.UITest.2.2.3\lib\net45\Xamarin.UITest.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\iOS\Fizzly.iOS.csproj">
+      <Project>{D2CB5AC8-E8F4-453E-B55F-DF85EB198A8C}</Project>
+      <Name>Fizzly.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Droid\Fizzly.Droid.csproj">
+      <Project>{D7FB66A3-49E8-4247-90BC-02C74CA0FB5E}</Project>
+      <Name>Fizzly.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

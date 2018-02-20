@@ -18,10 +18,11 @@ namespace Fizzly.iOS
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            App.Initialize();
-
-
-
+            // Override point for customization after application launch.
+            // If not required for your application you can safely delete this method
+            #if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+            #endif
             return true;
         }
 
@@ -57,3 +58,4 @@ namespace Fizzly.iOS
         }
     }
 }
+
