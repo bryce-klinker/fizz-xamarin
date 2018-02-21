@@ -5,30 +5,31 @@ namespace Fizzly.Tests
 {
     public class FizzBuzzTests
     {
+        private FizzBuzz _fizzBuzz;
+
+        public FizzBuzzTests()
+        {
+            _fizzBuzz = new FizzBuzz();
+        }
+
         [Fact]
         public void ShouldReturnValueAsString() 
         {
-            var fizzBuzz = new FizzBuzz();
-
-            var value = fizzBuzz.Evaluate(2);
+            var value = _fizzBuzz.Evaluate(2);
             Assert.Equal("2", value);
         }
 
         [Fact]
         public void ShouldReturnFizz() 
         {
-            var fizzBuzz = new FizzBuzz();
-
-            var value = fizzBuzz.Evaluate(3);
+            var value = _fizzBuzz.Evaluate(3);
             Assert.Equal("Fizz", value);
         }
 
         [Fact]
         public void ShouldReturnBuzz() 
         {
-            var fizzBuzz = new FizzBuzz();
-
-            var value = fizzBuzz.Evaluate(5);
+            var value = _fizzBuzz.Evaluate(5);
             Assert.Equal("Buzz", value);
         }
     }
