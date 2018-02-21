@@ -20,13 +20,16 @@ namespace Fizzly
 
         public string Evaluate()
         {
-            if (Value % 15 == 0)
+            if (IsFizzBuzz())
                 return "FizzBuzz";
 
-            if (Value % 5 == 0)
+            if (IsBuzz())
                 return "Buzz";
-            
-            return Value % 3 == 0 ? "Fizz" : "2";
+
+            if (IsFizz())
+                return "Fizz";
+
+            return "2";
         }
 
         public async Task<FizzBuzz> GetCurrent()
@@ -35,6 +38,21 @@ namespace Fizzly
             var json = await response.Content.ReadAsStringAsync();
             var model = JsonConvert.DeserializeObject<FizzBuzzModel>(json);
             return new FizzBuzz(model.Value, _client);
+        }
+
+        private bool IsFizzBuzz() 
+        {
+            return IsFizz() && IsBuzz();
+        }
+
+        private bool IsFizz()
+        {
+            return Value % 3 == 0;
+        }
+
+        private bool IsBuzz()
+        {
+            return Value % 5 == 0;
         }
     }
 }
