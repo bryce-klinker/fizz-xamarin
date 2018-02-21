@@ -20,7 +20,7 @@ namespace Fizzly
 
         public string Evaluate()
         {
-            if (Value == 15)
+            if (Value % 15 == 0)
                 return "FizzBuzz";
 
             if (Value % 5 == 0)
