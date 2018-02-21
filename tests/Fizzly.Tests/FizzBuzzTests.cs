@@ -49,6 +49,13 @@ namespace Fizzly.Tests
         }
 
         [Fact]
+        public void ShouldReturnFizzBuzzWhenDivisibleByThreeAndFive() 
+        {
+            var value = new FizzBuzz(30).Evaluate();
+            Assert.Equal("FizzBuzz", value);
+        }
+
+        [Fact]
         public async Task ShouldReturnCurrentFizzBuzzValue()
         {
             var client = new FakeHttpClient();
