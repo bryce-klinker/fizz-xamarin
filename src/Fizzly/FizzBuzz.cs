@@ -29,7 +29,7 @@ namespace Fizzly
             if (IsFizz())
                 return "Fizz";
 
-            return "2";
+            return $"{Value}";
         }
 
         public async Task<FizzBuzz> GetCurrent()
