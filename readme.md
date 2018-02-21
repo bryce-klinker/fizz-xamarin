@@ -21,3 +21,8 @@ If you have java9 installed as your default java version you will need to tell V
 1. Change the Java SDK Location to:
   1. `/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home`
 1. Now your Android project should build
+
+## NUnit Version
+
+*Xamarin.UITest is not compatible with NUnit 3.x*
+*DO NOT UPGRADE NUnit in UITest Projects* 
