@@ -107,11 +107,16 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
+    <Compile Include="FizzBuzzController.cs" />
+    <Compile Include="FizzBuzzController.designer.cs">
+      <DependentUpon>FizzBuzzController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
-  <Import Project="..\Fizzly\Fizzly.projitems" Label="Shared" Condition="Exists('..\Fizzly\Fizzly.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\Fizzly\Fizzly.csproj">
+      <Project>{55EB586C-6055-44CA-B5D7-A76F8B3B5BB5}</Project>
+      <Name>Fizzly</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

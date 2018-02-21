@@ -63,6 +63,11 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
   </ItemGroup>
-  <Import Project="..\Fizzly\Fizzly.projitems" Label="Shared" Condition="Exists('..\Fizzly\Fizzly.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\Fizzly\Fizzly.csproj">
+      <Project>{55EB586C-6055-44CA-B5D7-A76F8B3B5BB5}</Project>
+      <Name>Fizzly</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
