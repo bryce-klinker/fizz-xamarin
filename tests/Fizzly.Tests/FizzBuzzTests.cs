@@ -14,6 +14,13 @@ namespace Fizzly.Tests
         }
 
         [Fact]
+        public void ShouldReturnValueIfNotFizzOrBuzz() 
+        {
+            var value = new FizzBuzz(14).Evaluate();
+            Assert.Equal("14", value);
+        }
+
+        [Fact]
         public void ShouldReturnFizz() 
         {
             var value = new FizzBuzz(3).Evaluate();
