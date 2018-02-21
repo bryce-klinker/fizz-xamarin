@@ -42,6 +42,13 @@ namespace Fizzly.Tests
         }
 
         [Fact]
+        public void ShouldReturnFizzBuzz() 
+        {
+            var value = new FizzBuzz(15).Evaluate();
+            Assert.Equal("FizzBuzz", value);
+        }
+
+        [Fact]
         public async Task ShouldReturnCurrentFizzBuzzValue()
         {
             var client = new FakeHttpClient();
