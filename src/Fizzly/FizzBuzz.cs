@@ -23,7 +23,7 @@ namespace Fizzly
             if (Value == 5)
                 return "Buzz";
             
-            return Value == 3 ? "Fizz" : "2";
+            return Value % 3 == 0 ? "Fizz" : "2";
         }
 
         public async Task<FizzBuzz> GetCurrent()
