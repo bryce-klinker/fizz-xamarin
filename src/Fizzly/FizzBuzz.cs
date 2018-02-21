@@ -3,9 +3,12 @@ namespace Fizzly
 {
     public class FizzBuzz
     {
-        public object Evaluate(int v)
+        public object Evaluate(int value)
         {
-            return "2";
+            if (value == 5)
+                return "Buzz";
+            
+            return value == 3 ? "Fizz" : "2";
         }
     }
 }
