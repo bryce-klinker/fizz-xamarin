@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Fizzly.Models;
+﻿using System.Threading.Tasks;
 using Fizzly.Tests.Fakes;
 using Xunit;
 
@@ -27,6 +25,13 @@ namespace Fizzly.Tests
         {
             var value = new FizzBuzz(5).Evaluate();
             Assert.Equal("Buzz", value);
+        }
+
+        [Fact]
+        public void ShouldReturnFizzWhenDivisibleByThree()
+        {
+            var value = new FizzBuzz(6).Evaluate();
+            Assert.Equal("Fizz", value);
         }
 
         [Fact]
