@@ -8,42 +8,34 @@ namespace Fizzly.Tests
 {
     public class FizzBuzzTests
     {
-        private FakeHttpClient _client;
-        private FizzBuzz _fizzBuzz;
-
-        public FizzBuzzTests()
-        {
-            _client = new FakeHttpClient();
-            _fizzBuzz = new FizzBuzz(client: _client);
-        }
-
         [Fact]
         public void ShouldReturnValueAsString() 
         {
-            var value = _fizzBuzz.Evaluate(2);
+            var value = new FizzBuzz(2).Evaluate();
             Assert.Equal("2", value);
         }
 
         [Fact]
         public void ShouldReturnFizz() 
         {
-            var value = _fizzBuzz.Evaluate(3);
+            var value = new FizzBuzz(3).Evaluate();
             Assert.Equal("Fizz", value);
         }
 
         [Fact]
         public void ShouldReturnBuzz() 
         {
-            var value = _fizzBuzz.Evaluate(5);
+            var value = new FizzBuzz(5).Evaluate();
             Assert.Equal("Buzz", value);
         }
 
         [Fact]
         public async Task ShouldReturnCurrentFizzBuzzValue()
         {
-            _client.SetupGet("http://localhost:5000", new FizzBuzz(54));
+            var client = new FakeHttpClient();
+            client.SetupGet("http://localhost:5000", new FizzBuzz(54));
 
-            var model = await _fizzBuzz.GetCurrent();
+            var model = await new FizzBuzz(client: client).GetCurrent();
             Assert.Equal(54, model.Value);
         }
     }

@@ -18,12 +18,12 @@ namespace Fizzly
             Value = value;
         }
 
-        public string Evaluate(int value)
+        public string Evaluate()
         {
-            if (value == 5)
+            if (Value == 5)
                 return "Buzz";
             
-            return value == 3 ? "Fizz" : "2";
+            return Value == 3 ? "Fizz" : "2";
         }
 
         public async Task<FizzBuzz> GetCurrent()
