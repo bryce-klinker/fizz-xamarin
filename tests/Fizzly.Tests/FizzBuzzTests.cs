@@ -1,15 +1,20 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Fizzly.Models;
+using Fizzly.Tests.Fakes;
 using Xunit;
 
 namespace Fizzly.Tests
 {
     public class FizzBuzzTests
     {
+        private FakeHttpClient _client;
         private FizzBuzz _fizzBuzz;
 
         public FizzBuzzTests()
         {
-            _fizzBuzz = new FizzBuzz();
+            _client = new FakeHttpClient();
+            _fizzBuzz = new FizzBuzz(client: _client);
         }
 
         [Fact]
@@ -31,6 +36,15 @@ namespace Fizzly.Tests
         {
             var value = _fizzBuzz.Evaluate(5);
             Assert.Equal("Buzz", value);
+        }
+
+        [Fact]
+        public async Task ShouldReturnCurrentFizzBuzzValue()
+        {
+            _client.SetupGet("http://localhost:5000", new FizzBuzz(54));
+
+            var model = await _fizzBuzz.GetCurrent();
+            Assert.Equal(54, model.Value);
         }
     }
 }
