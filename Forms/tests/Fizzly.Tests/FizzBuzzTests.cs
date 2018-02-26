@@ -49,5 +49,12 @@ namespace Fizzly.Tests
             var fizzBuzz = new FizzBuzz(15);
             Assert.Equal("FizzBuzz", fizzBuzz.Evalate());
         }
+
+        [Fact]
+        public void ShouldReturnFizzBuzzIfDivisibleByThreeAndFive()
+        {
+            var fizzBuzz = new FizzBuzz(30);
+            Assert.Equal("FizzBuzz", fizzBuzz.Evalate());
+        }
     }
 }
