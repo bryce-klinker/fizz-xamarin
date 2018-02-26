@@ -6,14 +6,14 @@ using Newtonsoft.Json.Linq;
 
 namespace Fizzly
 {
-    public class FizzBuzzViewModel : PropertyChangedBase
+    public class MainViewModel : PropertyChangedBase
     {
         private readonly IHttpClient _httpClient;
         private readonly FizzBuzz _fizzBuzz;
         public string Value { get; set; }
         public ICommand FizzBuzzCommand { get; }
 
-        public FizzBuzzViewModel(IHttpClient httpClient)
+        public MainViewModel(IHttpClient httpClient)
         {
             _fizzBuzz = new FizzBuzz();
             _httpClient = httpClient;
