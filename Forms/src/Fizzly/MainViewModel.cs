@@ -8,7 +8,7 @@ namespace Fizzly
     {
         private readonly FizzBuzzService _service;
 
-        public string Value { get; set; } = "";
+        public string Value { get; private set; } = "";
         public ICommand FizzBuzzCommand { get; }
 
         public MainViewModel()
@@ -27,6 +27,7 @@ namespace Fizzly
         {
             var fizzBuzz = await _service.GetLatest();
             Value = fizzBuzz.Evalate();
+            NotifyPropertyChanged(nameof(Value));
         }
     }
 }
