@@ -4,6 +4,9 @@ namespace Fizzly
 {
     public class FizzBuzz
     {
+        private const string Fizz = "Fizz";
+        private const string Buzz = "Buzz";
+
         private readonly JObject _jObject;
         public int Value => _jObject.Value<int>("Value");
 
@@ -19,13 +22,23 @@ namespace Fizzly
         }
         public string Evalate()
         {
-            if (Value % 3 == 0 && Value % 5 == 0)
-                return "FizzBuzz";
+            if (IsFizz() && IsBuzz())
+                return $"{Fizz}{Buzz}";
 
-            if (Value % 5 == 0)
-                return "Buzz";
+            if (IsBuzz())
+                return Buzz;
 
-            return Value % 3 == 0 ? "Fizz" : Value.ToString();
+            return IsFizz() ? Fizz : Value.ToString();
+        }
+
+        private bool IsFizz()
+        {
+            return Value % 3 == 0;
+        }
+
+        private bool IsBuzz()
+        {
+            return Value % 5 == 0;
         }
     }
 }
