@@ -14,5 +14,12 @@ namespace Fizzly.Tests
             var fizzBuzz = new FizzBuzz(JObject.FromObject(new { Value = 3 }));
             Assert.Equal("Fizz", fizzBuzz.Evalate());
         }
+
+        [Fact]
+        public void ShouldReturnValue()
+        {
+            var fizzBuzz = new FizzBuzz(JObject.FromObject(new { Value = 1 }));
+            Assert.Equal("1", fizzBuzz.Evalate());
+        }
     }
 }
