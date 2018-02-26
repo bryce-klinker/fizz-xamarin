@@ -37,5 +37,16 @@ namespace Fizzly.Tests
             _viewModel.FizzBuzzCommand.Execute(null);
             Assert.Equal("2", _viewModel.Value);
         }
+
+        [Fact]
+        public void ShouldNotifyValueChanged()
+        {
+            string changedProperty = null;
+            _httpClient.SetupJsonResponse("http://localhost:9000", new {Value = 1});
+            _viewModel.PropertyChanged += (sender, args) => changedProperty = args.PropertyName;
+
+            _viewModel.FizzBuzzCommand.Execute(null);
+            Assert.Equal(nameof(MainViewModel.Value), changedProperty);
+        }
     }
 }
