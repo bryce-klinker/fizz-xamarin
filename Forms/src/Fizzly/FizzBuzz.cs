@@ -13,7 +13,7 @@ namespace Fizzly
         }
         public string Evalate()
         {
-            return Value == 6 ? "Fizz" : Value.ToString();
+            return Value % 3 == 0 ? "Fizz" : Value.ToString();
         }
     }
 }
