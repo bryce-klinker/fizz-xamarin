@@ -16,7 +16,7 @@ namespace Fizzly
 
         public async Task<FizzBuzz> GetLatest()
         {
-            var response = await _httpClient.GetAsync("http://localhost:9000");
+            var response = await _httpClient.GetAsync("http://localhost:5000");
             var json = await response.Content.ReadAsStringAsync();
             var jObject = JsonConvert.DeserializeObject<JObject>(json);
             return new FizzBuzz(jObject);

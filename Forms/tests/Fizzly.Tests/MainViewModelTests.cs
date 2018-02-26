@@ -23,7 +23,7 @@ namespace Fizzly.Tests
         [Fact]
         public void ShouldShowFizz()
         {
-            _httpClient.SetupJsonResponse("http://localhost:9000", new {Value = 6});
+            _httpClient.SetupJsonResponse("http://localhost:5000", new {Value = 6});
             
             _viewModel.FizzBuzzCommand.Execute(null);
             Assert.Equal("Fizz", _viewModel.Value);
@@ -32,7 +32,7 @@ namespace Fizzly.Tests
         [Fact]
         public void ShouldShowValue()
         {
-            _httpClient.SetupJsonResponse("http://localhost:9000", new {Value = 2});
+            _httpClient.SetupJsonResponse("http://localhost:5000", new {Value = 2});
             
             _viewModel.FizzBuzzCommand.Execute(null);
             Assert.Equal("2", _viewModel.Value);
@@ -48,7 +48,7 @@ namespace Fizzly.Tests
         public void ShouldNotifyValueChanged()
         {
             string changedProperty = null;
-            _httpClient.SetupJsonResponse("http://localhost:9000", new {Value = 1});
+            _httpClient.SetupJsonResponse("http://localhost:5000", new {Value = 1});
             _viewModel.PropertyChanged += (sender, args) => changedProperty = args.PropertyName;
 
             _viewModel.FizzBuzzCommand.Execute(null);
