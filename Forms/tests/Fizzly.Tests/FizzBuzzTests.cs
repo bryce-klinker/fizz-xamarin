@@ -11,21 +11,21 @@ namespace Fizzly.Tests
         [Fact]
         public void ShouldReturnFizz()
         {
-            var fizzBuzz = new FizzBuzz(JObject.FromObject(new { Value = 3 }));
+            var fizzBuzz = new FizzBuzz(3);
             Assert.Equal("Fizz", fizzBuzz.Evalate());
         }
 
         [Fact]
         public void ShouldReturnValue()
         {
-            var fizzBuzz = new FizzBuzz(JObject.FromObject(new { Value = 1 }));
+            var fizzBuzz = new FizzBuzz(1);
             Assert.Equal("1", fizzBuzz.Evalate());
         }
 
         [Fact]
         public void ShouldReturnBuzz()
         {
-            var fizzBuzz = new FizzBuzz(JObject.FromObject(new { Value = 5 }));
+            var fizzBuzz = new FizzBuzz(5);
             Assert.Equal("Buzz", fizzBuzz.Evalate());
         }
     }

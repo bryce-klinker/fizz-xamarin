@@ -6,7 +6,13 @@ namespace Fizzly
     {
         private readonly JObject _jObject;
         public int Value => _jObject.Value<int>("Value");
-        
+
+        public FizzBuzz(int value)
+            : this(JObject.FromObject(new { Value = value }))
+        {
+            
+        }
+
         public FizzBuzz(JObject jObject)
         {
             _jObject = jObject;
