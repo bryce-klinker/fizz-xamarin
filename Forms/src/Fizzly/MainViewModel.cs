@@ -9,13 +9,11 @@ namespace Fizzly
     public class MainViewModel : PropertyChangedBase
     {
         private readonly IHttpClient _httpClient;
-        private readonly FizzBuzz _fizzBuzz;
         public string Value { get; set; }
         public ICommand FizzBuzzCommand { get; }
 
         public MainViewModel(IHttpClient httpClient)
         {
-            _fizzBuzz = new FizzBuzz();
             _httpClient = httpClient;
             FizzBuzzCommand = new DelegateCommand(UpdateValue);
             Value = "";
@@ -26,7 +24,8 @@ namespace Fizzly
             var response = await _httpClient.GetAsync("http://localhost:9000");
             var json = await response.Content.ReadAsStringAsync();
             var jObject = JsonConvert.DeserializeObject<JObject>(json);
-            Value = _fizzBuzz.Evalate(jObject.Value<int>("Value"));
+            var fizzBuzz = new FizzBuzz(jObject);
+            Value = fizzBuzz.Evalate();
         }
     }
 }

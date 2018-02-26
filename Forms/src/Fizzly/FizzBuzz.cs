@@ -1,10 +1,19 @@
-﻿namespace Fizzly
+﻿using Newtonsoft.Json.Linq;
+
+namespace Fizzly
 {
     public class FizzBuzz
     {
-        public string Evalate(int value)
+        private readonly JObject _jObject;
+        public int Value => _jObject.Value<int>("Value");
+        
+        public FizzBuzz(JObject jObject)
         {
-            return value == 6 ? "Fizz" : value.ToString();
+            _jObject = jObject;
+        }
+        public string Evalate()
+        {
+            return Value == 6 ? "Fizz" : Value.ToString();
         }
     }
 }
