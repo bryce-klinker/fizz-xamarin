@@ -43,6 +43,7 @@ namespace Fizzly.UITests
 
         private async Task GivenANumberWebServiceThatReturnsValueInAJsonObject(int value)
         {
+            await _server.Start();
             await _server.SetValue(value);
         }
 
