@@ -11,6 +11,12 @@ namespace Fizzly
         public string Value { get; set; } = "";
         public ICommand FizzBuzzCommand { get; }
 
+        public MainViewModel()
+            : this(new HttpClient())
+        {
+            
+        }
+
         public MainViewModel(IHttpClient httpClient)
         {
             _service = new FizzBuzzService(httpClient);
