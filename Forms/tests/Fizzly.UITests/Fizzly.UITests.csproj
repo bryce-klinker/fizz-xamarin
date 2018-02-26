@@ -51,10 +51,6 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.0.0\ref\netcoreapp2.0\System.Net.Http.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.UITest, Version=2.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.UITest.2.2.3\lib\net45\Xamarin.UITest.dll</HintPath>
     </Reference>
@@ -93,12 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Fizzly.Android\Fizzly.Android.csproj">
-      <Project>{2cf4a101-bfee-4db3-b95d-0bf485e9ea57}</Project>
+      <Project>{2CF4A101-BFEE-4DB3-B95D-0BF485E9EA57}</Project>
       <Name>Fizzly.Android</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Fizzly.iOS\Fizzly.iOS.csproj">
-      <Project>{2a36f087-14f3-4c3b-ba8a-0abd4d694120}</Project>
+      <Project>{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}</Project>
       <Name>Fizzly.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
