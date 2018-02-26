@@ -102,4 +102,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+    <Target Name="AfterBuild">
+        <Delete Files="bin/$(Configuration)/System.Net.Http.dll" />
+    </Target>
 </Project>
