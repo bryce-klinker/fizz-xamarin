@@ -54,7 +54,7 @@ namespace Fizzly.UITests
 
         private AppResult GetFizzBuzzLabel()
         {
-            return _app.Query(t => t.Marked("FizzBuzzLabel")).First();
+            return _app.Query(t => t.Id("FizzBuzzLabel")).First();
         }
 
         private void WhenITapTheFizzBuzzButton()
