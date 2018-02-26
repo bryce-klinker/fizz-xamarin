@@ -28,7 +28,7 @@ namespace Fizzly.Tests
             _viewModel.FizzBuzzCommand.Execute(null);
             Assert.Equal("Fizz", _viewModel.Value);
         }
-
+        
         [Fact]
         public void ShouldShowValue()
         {
