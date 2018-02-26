@@ -8,7 +8,7 @@ namespace Fizzly.Tests
         [Fact]
         public void ShouldShowNoValue()
         {
-            var viewModel = new FizzBuzzViewModel();
+            var viewModel = new FizzBuzzViewModel(new FakeHttpClient());
             Assert.Equal("", viewModel.Value);
         }
 
@@ -18,9 +18,20 @@ namespace Fizzly.Tests
             var client = new FakeHttpClient();
             client.SetupJsonResponse("http://localhost:9000", new {Value = 6});
             
-            var viewModel = new FizzBuzzViewModel();
+            var viewModel = new FizzBuzzViewModel(client);
             viewModel.FizzBuzzCommand.Execute(null);
             Assert.Equal("Fizz", viewModel.Value);
+        }
+
+        [Fact]
+        public void ShouldShowValue()
+        {
+            var client = new FakeHttpClient();
+            client.SetupJsonResponse("http://localhost:9000", new {Value = 2});
+            
+            var viewModel = new FizzBuzzViewModel(client);
+            viewModel.FizzBuzzCommand.Execute(null);
+            Assert.Equal("2", viewModel.Value);
         }
     }
 }
