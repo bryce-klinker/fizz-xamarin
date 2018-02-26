@@ -6,19 +6,17 @@ namespace Fizzly
     {
         private const string Fizz = "Fizz";
         private const string Buzz = "Buzz";
-
-        private readonly JObject _jObject;
-        public int Value => _jObject.Value<int>("Value");
+        
+        public int Value { get; }
 
         public FizzBuzz(int value)
-            : this(JObject.FromObject(new { Value = value }))
         {
-            
+            Value = value;
         }
 
-        public FizzBuzz(JObject jObject)
+        public FizzBuzz(JToken jObject)
+            : this(jObject.Value<int>("Value"))
         {
-            _jObject = jObject;
         }
         public string Evalate()
         {
