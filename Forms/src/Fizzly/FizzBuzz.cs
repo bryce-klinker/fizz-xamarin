@@ -19,7 +19,7 @@ namespace Fizzly
         }
         public string Evalate()
         {
-            if (Value == 5)
+            if (Value % 5 == 0)
                 return "Buzz";
 
             return Value % 3 == 0 ? "Fizz" : Value.ToString();
