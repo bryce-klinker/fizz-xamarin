@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fizzly.Android", "src\Fizzl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fizzly.iOS", "src\Fizzly.iOS\Fizzly.iOS.csproj", "{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fizzly", "src\Fizzly\Fizzly.csproj", "{8481FE53-3693-4D19-82D3-FCFD3E4EF9F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fizzly", "src\Fizzly\Fizzly.csproj", "{8481FE53-3693-4D19-82D3-FCFD3E4EF9F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,8 +102,8 @@ Global
 		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
 		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
 		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.Debug|iPhone.Build.0 = Debug|iPhone
+		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.Debug|iPhone.ActiveCfg = Debug|iPhoneSimulator
+		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.Debug|iPhone.Build.0 = Debug|iPhoneSimulator
 		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}.Release|Any CPU.ActiveCfg = Release|iPhone
