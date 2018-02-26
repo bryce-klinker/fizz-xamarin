@@ -39,6 +39,12 @@ namespace Fizzly.Tests
         }
 
         [Fact]
+        public void ShouldAlwaysBeableToExecuteFizzBuzz() 
+        {
+            Assert.True(_viewModel.FizzBuzzCommand.CanExecute(null));
+        }
+
+        [Fact]
         public void ShouldNotifyValueChanged()
         {
             string changedProperty = null;
