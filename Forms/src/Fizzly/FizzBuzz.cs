@@ -19,6 +19,9 @@ namespace Fizzly
         }
         public string Evalate()
         {
+            if (Value % 3 == 0 && Value % 5 == 0)
+                return "FizzBuzz";
+
             if (Value % 5 == 0)
                 return "Buzz";
 
