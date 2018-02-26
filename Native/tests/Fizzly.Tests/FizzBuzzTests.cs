@@ -66,7 +66,7 @@ namespace Fizzly.Tests
         public async Task ShouldReturnCurrentFizzBuzzValue()
         {
             var client = new FakeHttpClient();
-            client.SetupGet("http://localhost:5000", new FizzBuzz(54));
+            client.SetupGet("", new FizzBuzz(54));
 
             var model = await new FizzBuzz(client: client).GetCurrent();
             Assert.Equal(54, model.Value);

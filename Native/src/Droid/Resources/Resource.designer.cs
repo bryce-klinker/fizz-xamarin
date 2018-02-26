@@ -45,7 +45,10 @@ namespace Fizzly.Droid
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int myButton = 2131034112;
+			public const int FizzBuzz = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int FizzBuzzValue = 2131034113;
 			
 			static Id()
 			{
@@ -96,7 +99,7 @@ namespace Fizzly.Droid
 			public const int app_name = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int hello = 2130968576;
+			public const int originalButtonText = 2130968576;
 			
 			static String()
 			{

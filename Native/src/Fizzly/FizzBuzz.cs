@@ -14,7 +14,7 @@ namespace Fizzly
 
         public FizzBuzz(int value = 0, IHttpClient client = null)
         {
-            _client = client;
+            _client = client ?? new HttpClient();
             Value = value;
         }
 
@@ -34,7 +34,7 @@ namespace Fizzly
 
         public async Task<FizzBuzz> GetCurrent()
         {
-            var response = await _client.GetAsync("http://localhost:5000");
+            var response = await _client.GetAsync("");
             var json = await response.Content.ReadAsStringAsync();
             var model = JsonConvert.DeserializeObject<FizzBuzzModel>(json);
             return new FizzBuzz(model.Value, _client);
