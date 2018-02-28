@@ -29,6 +29,8 @@ namespace Fizzly.iOS
             Xamarin.Calabash.Start();
             #endif
 
+            // IMPORTANT: This sucks but fixes a runtime error where ios can't find the assembly.
+            var chart = new Microcharts.Forms.ChartView();
             return base.FinishedLaunching(app, options);
         }
     }
