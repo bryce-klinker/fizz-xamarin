@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fizzly.Android", "src\Fizzl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fizzly.iOS", "src\Fizzly.iOS\Fizzly.iOS.csproj", "{2A36F087-14F3-4C3B-BA8A-0ABD4D694120}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fizzly", "src\Fizzly\Fizzly.csproj", "{8481FE53-3693-4D19-82D3-FCFD3E4EF9F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fizzly", "src\Fizzly\Fizzly.csproj", "{8481FE53-3693-4D19-82D3-FCFD3E4EF9F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakeWebService", "tests\FakeWebService\FakeWebService.csproj", "{EE09C1A5-D0F4-4EC7-B645-6EE84A8FE2E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeWebService", "tests\FakeWebService\FakeWebService.csproj", "{EE09C1A5-D0F4-4EC7-B645-6EE84A8FE2E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{FAEE35F2-B017-41E4-B1E6-A03EF103E834}"
 	ProjectSection(SolutionItems) = preProject

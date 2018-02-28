@@ -17,4 +17,8 @@
     <ProjectReference Include="..\..\src\Fizzly\Fizzly.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FizzBuzz\" />
+    <Folder Include="FizzBuzz\ViewModels\" />
+  </ItemGroup>
 </Project>

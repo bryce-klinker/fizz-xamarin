@@ -3,7 +3,7 @@ using Fizzly.Shared.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Fizzly
+namespace Fizzly.FizzBuzz
 {
     public class FizzBuzzService
     {

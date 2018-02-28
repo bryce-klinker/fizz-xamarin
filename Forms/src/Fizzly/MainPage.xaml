@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Fizzly"
-             x:Class="Fizzly.MainPage">
-    <ContentPage.BindingContext>
-        <local:MainViewModel />
-    </ContentPage.BindingContext>
-	<Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        
-        <StackLayout Grid.Column="1" Grid.Row="1">
-            <Button AutomationId="FizzBuzzButton" Command="{Binding FizzBuzzCommand}" Text="FizzBuzz"/>
-            <Label AutomationId="FizzBuzzLabel" Text="{Binding Value}" />
-        </StackLayout>
-	</Grid>
-
-</ContentPage>
+<TabbedPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Fizzly.MainPage"
+    xmlns:fizzBuzz="clr-namespace:Fizzly.FizzBuzz.Views;assembly=Fizzly"
+    xmlns:dashboard="clr-namespace:Fizzly.Dashboard.Views;assembly=Fizzly"
+    >
+    <TabbedPage.Children>
+        <fizzBuzz:FizzBuzzPage />
+        <dashboard:DashboardPage />
+    </TabbedPage.Children>
+</TabbedPage>

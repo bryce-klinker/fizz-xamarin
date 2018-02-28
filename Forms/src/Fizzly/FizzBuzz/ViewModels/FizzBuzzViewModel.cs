@@ -2,22 +2,22 @@
 using Fizzly.Shared;
 using Fizzly.Shared.Http;
 
-namespace Fizzly
+namespace Fizzly.FizzBuzz.ViewModels
 {
-    public class MainViewModel : PropertyChangedBase
+    public class FizzBuzzViewModel : PropertyChangedBase
     {
         private readonly FizzBuzzService _service;
 
         public string Value { get; private set; } = "";
         public ICommand FizzBuzzCommand { get; }
 
-        public MainViewModel()
+        public FizzBuzzViewModel()
             : this(new HttpClient())
         {
             
         }
 
-        public MainViewModel(IHttpClient httpClient)
+        public FizzBuzzViewModel(IHttpClient httpClient)
         {
             _service = new FizzBuzzService(httpClient);
             FizzBuzzCommand = new DelegateCommand(UpdateValue);

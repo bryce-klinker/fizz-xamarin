@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Fizzly.FizzBuzz.Views.FizzBuzzPage"
+    xmlns:viewModels="clr-namespace:Fizzly.FizzBuzz.ViewModels;assembly=Fizzly"
+    Title="FizzBuzz"
+    >
+    <NavigationPage.BindingContext>
+        <viewModels:FizzBuzzViewModel />
+    </NavigationPage.BindingContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackLayout Grid.Column="1" Grid.Row="1">
+            <Button AutomationId="FizzBuzzButton" Command="{Binding FizzBuzzCommand}" Text="FizzBuzz"/>
+            <Label AutomationId="FizzBuzzLabel" Text="{Binding Value}" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

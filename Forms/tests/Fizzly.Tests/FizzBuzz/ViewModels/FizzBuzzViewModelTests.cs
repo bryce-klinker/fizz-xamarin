@@ -1,17 +1,18 @@
-﻿using Fizzly.Tests.Fakes.Http;
+﻿using Fizzly.FizzBuzz.ViewModels;
+using Fizzly.Tests.Fakes.Http;
 using Xunit;
 
-namespace Fizzly.Tests
+namespace Fizzly.Tests.FizzBuzz.ViewModels
 {
-    public class MainViewModelTests
+    public class FizzBuzzViewModelTests
     {
         private readonly FakeHttpClient _httpClient;
-        private readonly MainViewModel _viewModel;
+        private readonly FizzBuzzViewModel _viewModel;
 
-        public MainViewModelTests()
+        public FizzBuzzViewModelTests()
         {
             _httpClient = new FakeHttpClient();
-            _viewModel = new MainViewModel(_httpClient);
+            _viewModel = new FizzBuzzViewModel(_httpClient);
         }
 
         [Fact]
@@ -52,7 +53,7 @@ namespace Fizzly.Tests
             _viewModel.PropertyChanged += (sender, args) => changedProperty = args.PropertyName;
 
             _viewModel.FizzBuzzCommand.Execute(null);
-            Assert.Equal(nameof(MainViewModel.Value), changedProperty);
+            Assert.Equal(nameof(FizzBuzzViewModel.Value), changedProperty);
         }
     }
 }
