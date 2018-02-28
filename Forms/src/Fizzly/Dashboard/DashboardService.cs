@@ -14,7 +14,7 @@ namespace Fizzly.Dashboard
     {
         public async Task<DashboardModel> GetLatest() 
         {
-            await Task.Delay(1000);
+            await Task.Delay(2000);
             return new DashboardModel
             {
 

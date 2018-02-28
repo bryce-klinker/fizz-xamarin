@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Shared\Views\LoadingView.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
@@ -27,5 +30,9 @@
     <Folder Include="Dashboard\Views\" />
     <Folder Include="Dashboard\ViewModels\" />
     <Folder Include="Dashboard\Models\" />
+    <Folder Include="Shared\Components\" />
+    <Folder Include="Shared\Components\Loading\" />
+    <Folder Include="Shared\Styles\" />
+    <Folder Include="Shared\Converters\" />
   </ItemGroup>
 </Project>

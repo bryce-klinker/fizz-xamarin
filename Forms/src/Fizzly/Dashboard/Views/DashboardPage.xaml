@@ -4,6 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:viewModels="clr-namespace:Fizzly.Dashboard.ViewModels;assembly=Fizzly"
     x:Class="Fizzly.Dashboard.Views.DashboardPage"
+    xmlns:charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    xmlns:loading="clr-namespace:Fizzly.Shared.Components.Loading;assembly=Fizzly"
     Title="Dashboard"
     >
     <ContentPage.BindingContext>
@@ -19,6 +21,11 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-
+        <loading:LoadingView Grid.Row="0" Grid.Column="0" 
+            IsVisible="{Binding IsLoading}" />
+        <charts:ChartView Grid.Row="0" Grid.Column="0"
+            IsVisible="{Binding IsLoading, Converter={StaticResource InverseBooleanConverter}"
+            Chart="{Binding GoldenHourChart}" 
+        />
     </Grid>
 </ContentPage>
